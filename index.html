@@ -1,15 +1,80 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qubit Network</title>
     <link rel="stylesheet" href="index.css">
-    
+
+    <!-- Font Link from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Port+Lligat+Slab&display=swap" rel="stylesheet">
+
+    <!-- CDN for Icon from Remix icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+            </style>
 </head>
+
 <body>
-    
-    <script src="index.js"></script>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="navbar">
+            <div class="navbar-left"><img src="image/qubit_logo.webp" alt=""></div>
+            <div class="navbar-right">
+                <i class="ri-menu-line" id="menu-icon" onclick="toggleMenu()"></i>
+                <ul id="menu-links">
+                    <li><a href="">Home</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.qubit.network" target="_blank">Download</a></li>
+                    <li><a href="https://x.com/CryptoFi26" target="_blank">Twitter</a></li>
+                    <li><a href="https://www.instagram.com/cryptofi26/?hl=en" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <div class="main">
+            <div class="main-left">
+                <p>Mining Revolution</p>
+                <h1>Qubit Mining Network</h1>
+                <button class="main-left-button" onclick="copyToClipboard()">Invite Code</button>
+                <button id="Download" class="main-left-button">
+                    <a href="https://play.google.com/store/apps/details?id=com.qubit.network" target="_blank">Download</a>
+                </button>
+            </div>
+            <div class="main-right">
+                <img src="image/main.webp" alt="">
+            </div>
+        </div>
+    </main>
+
+    <!-- Popup Notification -->
+    <div id="popup" class="popup">Copied!</div>
+
+    <script>
+        function copyToClipboard() {
+            var textToCopy = "Gk_07";
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                var popup = document.getElementById("popup");
+                popup.style.display = "block";
+
+                setTimeout(() => {
+                    popup.style.display = "none";
+                }, 1000);
+            }).catch(err => {
+                console.error("Failed to copy:", err);
+            });
+        }
+
+        function toggleMenu() {
+            var menuLinks = document.getElementById("menu-links");
+            menuLinks.classList.toggle("active");
+        }
+    </script>
 </body>
+
 </html>
